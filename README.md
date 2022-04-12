@@ -1,4 +1,4 @@
-<div align="center" > <img width="50vw" src="https://img.icons8.com/color/344/pikachu-pokemon.png"/>
+<div align="center" > <img width="70vw" src="https://img.icons8.com/color/344/pikachu-pokemon.png"/>
  <h1 align="center"><strong>Pokédex</b></strong></h1></div>
 
 
