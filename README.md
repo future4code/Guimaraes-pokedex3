@@ -2,7 +2,6 @@
  <h1 align="center"><strong>Pokédex</b></strong></h1></div>
 
 
-<div align="center" > 
 Nome dos integrantes: 
 - Caio Rigotto
 - Camila Coradi
@@ -17,4 +16,3 @@ O que funciona:
 O que não funciona: 
 - Item 3
 - Item 4
- </div>
