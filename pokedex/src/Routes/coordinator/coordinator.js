@@ -4,13 +4,13 @@ export const goToPokedex = (navigate) => {
   navigate(`/pokedex`);
 };
 
-export const goToDetails = (navigate) => {
-  navigate(`/details`);
+export const goToDetails = (navigate, name) => {
+  navigate(`/details/${name}`);
 };
 
 export const goToBack = (navigate) => {
   navigate(-1);
 };
 export const goBackHome = (navigate) => {
-  navigate(-2);
+  navigate(-1);
 };
