@@ -4,6 +4,7 @@ import { goToPokedex } from "../../Routes/coordinator/coordinator";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import { goToDetails } from "../../Routes/coordinator/coordinator";
 import { Pagination } from "@mui/material";
+import { PkmCard, PkmContainer, PkmText } from "./StyledHome";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,15 +14,13 @@ const Home = () => {
     <div>
       <h1>Home</h1>
       <button onClick={() => goToPokedex(navigate)}>Ir para a Pokedex</button>
+      <PkmContainer>
       {pokemonsDetails?.map((poke) => {
+        console.log(poke)
         return (
-          <div>
-            <p key={poke.id}>{poke.name}</p>
-            <img
-              width={"100px"}
-              src={poke.sprites.other.dream_world.front_default}
-              alt={pokemonsDetails.name}
-            />
+          <PkmCard url={poke.sprites.other.home.front_default}>
+            <PkmText key={poke.id}>{poke.name}</PkmText>
+            <PkmText>{poke.types[0].type.name}</PkmText>
             <button onClick={() => addToPokedex(poke)}>
               {" "}
               Adicionar à Pokedex{" "}
@@ -32,9 +31,10 @@ const Home = () => {
             >
               Ver Detalhes
             </button>
-          </div>
+          </PkmCard>
         );
       })}
+      </PkmContainer>
       <div>
         <Pagination count={20} color="primary" onChange={onChangePage} />
       </div>
