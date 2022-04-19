@@ -11,7 +11,9 @@ export default function useRequestData(url){
 
         axios
         .get(url)
-        .then((res) => setLoading(false), setData(res.data))
+        .then((res) => {
+            setLoading(false)
+            setData(res.data)})
         .catch((err) => setLoading(false))
     },
     [url])
