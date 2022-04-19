@@ -48,7 +48,7 @@ const GlobalState = (props) => {
     const newPokemonList = [...pokemonsDetails];
     newPokemonList.splice(pokeIndex, 1);
     const newPokedexList = [...pokedex, pokemonsDetails[pokeIndex]];
-    setPokemonsDetails(newPokedexList);
+    setPokemonsDetails(newPokemonList);
     setPokedex(newPokedexList);
 
     alert("Você adicionou um pokemon!");
