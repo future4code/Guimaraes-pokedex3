@@ -11,7 +11,7 @@
 - Camila Coradi
 - Laíne Moura
 
-[Link do Surge](https://alcoholic-mitten.surge.sh/)
+[Link do Surge](https://knowledgeable-toy.surge.sh/)
 
 O que funciona:
 - Item 1
