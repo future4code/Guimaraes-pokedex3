@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import { goToBack, goToDetails } from "../../Routes/coordinator/coordinator";
-import { PokedexCardContainer } from "./StyledPokedex";
+import { PokedexCardButtons, PokedexCardContainer } from "./StyledPokedex";
 
 const Pokedex = () => {
   const navigate = useNavigate();
@@ -16,19 +16,19 @@ const Pokedex = () => {
         return (
           <PokedexCardContainer type={poke.types[0].type.name}>
             <div>
-            <button
+            <PokedexCardButtons
               onClick={() => {
                 rmvPokemonCart(poke);
               }}
             >
               Remover
-            </button>
-            <button
+            </PokedexCardButtons>
+            <PokedexCardButtons
               onClick={() => goToDetails(navigate, poke.name)}
               key={poke.name}
             >
               Ver Detalhes
-            </button>
+            </PokedexCardButtons>
             </div>
             <p key={poke.id}> {poke.name} </p>
             <img
