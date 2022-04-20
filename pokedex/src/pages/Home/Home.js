@@ -4,7 +4,7 @@ import { goToPokedex } from "../../Routes/coordinator/coordinator";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import { goToDetails } from "../../Routes/coordinator/coordinator";
 import { Pagination } from "@mui/material";
-import { PkmCard, PkmContainer, PkmText } from "./StyledHome";
+import { PkmButtons, PkmButtonsContainer, PkmCard, PkmContainer, PkmImg, PkmText } from "./StyledHome";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -18,19 +18,26 @@ const Home = () => {
       {pokemonsDetails?.map((poke) => {
         console.log(poke)
         return (
-          <PkmCard url={poke.sprites.other.home.front_default}>
+          <PkmCard type={poke.types[0].type.name}>
+            <PkmImg
+              width={"150px"}
+              src={poke.sprites.other.home.front_default}
+              alt={pokemonsDetails.name}
+            />
             <PkmText key={poke.id}>{poke.name}</PkmText>
             <PkmText>{poke.types[0].type.name}</PkmText>
-            <button onClick={() => addToPokedex(poke)}>
+            <PkmButtonsContainer>
+            <PkmButtons onClick={() => addToPokedex(poke)}>
               {" "}
               Adicionar à Pokedex{" "}
-            </button>
-            <button
+            </PkmButtons>
+            <PkmButtons
               onClick={() => goToDetails(navigate, poke.name)}
               key={poke.name}
             >
-              Ver Detalhes
-            </button>
+              Detalhes
+            </PkmButtons>
+            </PkmButtonsContainer>
           </PkmCard>
         );
       })}
