@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import { goToBack, goToDetails } from "../../Routes/coordinator/coordinator";
+import { PokedexCardContainer } from "./StyledPokedex";
 
 const Pokedex = () => {
   const navigate = useNavigate();
@@ -11,14 +12,10 @@ const Pokedex = () => {
       <h1>Pokedex</h1>
 
       {pokedex?.map((poke) => {
+        console.log(poke)
         return (
-          <div>
-            <p key={poke.id}> {poke.name} </p>
-            <img
-            width={'50px'}
-              src={poke.sprites.other.dream_world.front_default}
-              alt={poke.name}
-            />
+          <PokedexCardContainer type={poke.types[0].type.name}>
+            <div>
             <button
               onClick={() => {
                 rmvPokemonCart(poke);
@@ -32,7 +29,14 @@ const Pokedex = () => {
             >
               Ver Detalhes
             </button>
-          </div>
+            </div>
+            <p key={poke.id}> {poke.name} </p>
+            <img
+            width={'50px'}
+              src={poke.sprites.versions['generation-v']['black-white'].animated.front_default}
+              alt={poke.name}
+            />
+          </PokedexCardContainer>
         );
       })}
 

@@ -1,46 +1,14 @@
 import styled from 'styled-components'
+import { useHandleType } from '../../Hooks/UseHandleType';
 
 export const PkmContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 `
-const handleType = type =>{
-    switch(type){
-        case 'normal':
-        case 'ghost':
-            return "#EFEFF2";
-        case 'fire':
-        case 'fighting':
-        case 'dragon':
-            return "#F76545";
-        case 'electric':
-            return "#F7C545";
-        case 'ground':
-            return "#9B897B";
-        case 'ice':
-        case 'water':
-            return "#76AADB";
-        case 'grass':
-        case 'bug':
-            return "#70A83B";
-        case 'stile':
-        case 'dark':
-        case 'rock':
-            return "#A2A2A2"
-        case 'poison':
-        case 'psychic':
-        case 'fairy':
-        case 'ghost':
-            return "#A974BC";
-        default:
-            return "#EFEFF2";
-    }
-}
 export const PkmCard = styled.div`
-
-    background: ${props => handleType(props.type)};
-    border-radius: 40px;
+    background: ${props => useHandleType(props.type)};
+    border-radius: 10px;
     max-height: 30%;
     height: fit-content;
     width: 15%;
@@ -54,6 +22,7 @@ export const PkmImg = styled.img`
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    width: 80%;
     background: #c7c7d1;
     box-shadow: inset 6px 5px 7px rgba(0, 0, 0, 0.29);
     border-radius: 70px;
@@ -72,5 +41,14 @@ export const PkmButtonsContainer = styled.div`
 `
 export const PkmButtons = styled.button`
     border: none;
-    background-color: #c7c7d1;
+    background-color: transparent;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 20px;
+
+    :hover{
+        background-color: grey;
+        border-radius: 10px;
+    }
 `

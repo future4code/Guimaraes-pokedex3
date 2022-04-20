@@ -15,16 +15,15 @@ const Home = () => {
       <h1>Home</h1>
       <button onClick={() => goToPokedex(navigate)}>Ir para a Pokedex</button>
       <PkmContainer>
-      {pokemonsDetails?.map((poke) => {
-        console.log(poke)
+      {pokemonsDetails?.sort(function(a,b){return a.id - b.id}).map((poke) => {
+        console.log(pokemonsDetails)
         return (
           <PkmCard type={poke.types[0].type.name}>
+            <PkmText key={poke.id}>#{poke.id} {poke.name}</PkmText>
             <PkmImg
-              width={"150px"}
               src={poke.sprites.other.home.front_default}
               alt={pokemonsDetails.name}
             />
-            <PkmText key={poke.id}>{poke.name}</PkmText>
             <PkmText>{poke.types[0].type.name}</PkmText>
             <PkmButtonsContainer>
             <PkmButtons onClick={() => addToPokedex(poke)}>
