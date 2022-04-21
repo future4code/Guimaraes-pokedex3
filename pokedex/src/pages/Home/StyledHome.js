@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { useHandleType } from '../../Hooks/UseHandleType';
+import pokeballBG from '../../img/Pokeball.png'
 
 export const PkmContainer = styled.div`
     display: flex;
@@ -23,9 +24,8 @@ export const PkmImg = styled.img`
     margin-right: auto;
     margin-top: 10px;
     width: 80%;
-    background: #c7c7d1;
-    box-shadow: inset 6px 5px 7px rgba(0, 0, 0, 0.29);
-    border-radius: 70px;
+    background-image: url(${pokeballBG});
+    background-size: contain;
 `
 export const PkmText = styled.p`
     text-transform: capitalize;
@@ -48,7 +48,7 @@ export const PkmButtons = styled.button`
     font-size: 20px;
 
     :hover{
-        background-color: grey;
+        background-color: lightgrey;
         border-radius: 10px;
     }
 `

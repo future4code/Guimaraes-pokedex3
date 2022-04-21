@@ -12,5 +12,5 @@ export const goToBack = (navigate) => {
   navigate(-1);
 };
 export const goBackHome = (navigate) => {
-  navigate(-1);
+  navigate('/');
 };

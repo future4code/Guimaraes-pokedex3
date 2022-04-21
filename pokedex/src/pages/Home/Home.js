@@ -12,11 +12,8 @@ const Home = () => {
     useContext(GlobalStateContext);
   return (
     <div>
-      <h1>Home</h1>
-      <button onClick={() => goToPokedex(navigate)}>Ir para a Pokedex</button>
       <PkmContainer>
       {pokemonsDetails?.sort(function(a,b){return a.id - b.id}).map((poke) => {
-        console.log(pokemonsDetails)
         return (
           <PkmCard type={poke.types[0].type.name}>
             <PkmText key={poke.id}>#{poke.id} {poke.name}</PkmText>

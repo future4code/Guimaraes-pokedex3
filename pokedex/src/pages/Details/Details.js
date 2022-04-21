@@ -29,12 +29,8 @@ const Details = () => {
       return <p key={pokemon.id}>{move.move.name}</p>;
     });
 
-    console.log(pokemon)
-
   return (
     <div>
-      <h1>Detalhes</h1>
-
       {pokemon && (
         <DetailCardContainer type={pokemon.types[0].type.name}
         url={pokemon.sprites.other.home.front_default}>
