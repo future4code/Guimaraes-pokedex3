@@ -11,6 +11,7 @@ export const DetailCardContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+    margin-top: 150px;
 
     background: ${props => useHandleType(props.type)};
     background-image: url(${props => props.url});

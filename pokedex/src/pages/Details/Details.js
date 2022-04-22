@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../../Constants/Url";
 import useRequestData from "../../Hooks/UseRequestData";
-import { goToBack } from "../../Routes/coordinator/coordinator";
 import { DetailCardContainer } from "./StyledDetails";
 
 const Details = () => {
@@ -49,7 +48,6 @@ const Details = () => {
           </div>
         </DetailCardContainer>
       )}
-      <button onClick={() => goToBack(navigate)}>Voltar para Pokedex</button>
     </div>
   );
 };

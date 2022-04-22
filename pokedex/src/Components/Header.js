@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { HeaderContainer, HeaderTextContainer, HeaderImg, HeaderText, HeaderButtonsContainer, HeaderText2 } from "../Components/StyledHeader";
 import { goBackHome, goToPokedex } from "../Routes/coordinator/coordinator";
 import pokeball from "../img/Pokeball.png"
+import Pokedex from "../img/Pokedex.png"
 
 const Header = () => {
     const navigate = useNavigate()
@@ -10,7 +11,8 @@ const Header = () => {
         <HeaderContainer>
             <HeaderTextContainer>
             <HeaderImg src={pokeball} onClick={() => goBackHome(navigate)}></HeaderImg>
-            <HeaderText onClick={() => goBackHome(navigate)}>Pokédex</HeaderText>
+            <HeaderText onClick={() => goBackHome(navigate)}></HeaderText>
+            <img src={Pokedex} width="200px"/>
             </HeaderTextContainer>
             <HeaderButtonsContainer>
             <HeaderText2 onClick={() => goBackHome(navigate)}>Ver Pokemons</HeaderText2>
