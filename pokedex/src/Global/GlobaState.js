@@ -8,13 +8,13 @@ const GlobalState = (props) => {
   const [pokemonsUrls, setPokemonsUrls] = useState([]);
   const [pokemonsDetails, setPokemonsDetails] = useState([]);
   const [pokedex, setPokedex] = useState([]);
-  const [numberPage, setNumberPage] = useState(1);
+  const [numberPage, setNumberPage] = useState(0);
   const page = numberPage * 20;
   const [pokemonData, setPokemonData] = useRequestData(
     `${BASE_URL}/pokemon?limit=20&offset=${page}`
   );
 
-  const onChangePage = (e, value) => setNumberPage(value);
+  const onChangePage = (e, value) => setNumberPage(value-1);
 
   useEffect(() => {
     const list = [];

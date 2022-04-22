@@ -4,6 +4,7 @@ import { goToPokedex } from "../../Routes/coordinator/coordinator";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import { goToDetails } from "../../Routes/coordinator/coordinator";
 import { Pagination } from "@mui/material";
+import { PkmButtons, PkmButtonsContainer, PkmCard, PkmContainer, PkmImg, PkmText } from "./StyledHome";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,30 +12,32 @@ const Home = () => {
     useContext(GlobalStateContext);
   return (
     <div>
-      <h1>Home</h1>
-      <button onClick={() => goToPokedex(navigate)}>Ir para a Pokedex</button>
-      {pokemonsDetails?.map((poke) => {
+      <PkmContainer>
+      {pokemonsDetails?.sort(function(a,b){return a.id - b.id}).map((poke) => {
         return (
-          <div>
-            <p key={poke.id}>{poke.name}</p>
-            <img
-              width={"100px"}
-              src={poke.sprites.other.dream_world.front_default}
+          <PkmCard type={poke.types[0].type.name}>
+            <PkmText key={poke.id}>#{poke.id} {poke.name}</PkmText>
+            <PkmImg
+              src={poke.sprites.other.home.front_default}
               alt={pokemonsDetails.name}
             />
-            <button onClick={() => addToPokedex(poke)}>
+            <PkmText>{poke.types[0].type.name}</PkmText>
+            <PkmButtonsContainer>
+            <PkmButtons onClick={() => addToPokedex(poke)}>
               {" "}
               Adicionar à Pokedex{" "}
-            </button>
-            <button
+            </PkmButtons>
+            <PkmButtons
               onClick={() => goToDetails(navigate, poke.name)}
               key={poke.name}
             >
-              Ver Detalhes
-            </button>
-          </div>
+              Detalhes
+            </PkmButtons>
+            </PkmButtonsContainer>
+          </PkmCard>
         );
       })}
+      </PkmContainer>
       <div>
         <Pagination count={20} color="primary" onChange={onChangePage} />
       </div>

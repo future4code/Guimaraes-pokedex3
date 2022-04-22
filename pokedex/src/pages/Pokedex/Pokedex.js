@@ -2,42 +2,47 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import { goToBack, goToDetails } from "../../Routes/coordinator/coordinator";
+import { PokedexCardButtons, PokedexCardContainer, PokedexCardImg, PokedexCardPkmContainer, PokedexCardText, PokedexContainer, PokedexHeader, PokedexHeaderText, PokedexTextP } from "./StyledPokedex";
 
 const Pokedex = () => {
   const navigate = useNavigate();
   const { pokedex, rmvPokemonCart } = useContext(GlobalStateContext);
   return (
-    <div>
-      <h1>Pokedex</h1>
-
+    <PokedexContainer>
+      <PokedexTextP>Pokémons adicionados: {pokedex.length}</PokedexTextP>
       {pokedex?.map((poke) => {
+        console.log(poke)
         return (
-          <div>
-            <p key={poke.id}> {poke.name} </p>
-            <img
+          <PokedexCardContainer type={poke.types[0].type.name}>
+            <PokedexCardPkmContainer>
+            <PokedexCardImg
             width={'50px'}
-              src={poke.sprites.other.dream_world.front_default}
+              src={poke.sprites.versions['generation-v']['black-white'].animated.front_default}
               alt={poke.name}
             />
-            <button
+            <PokedexCardText key={poke.id}>{poke.name} #{poke.id}</PokedexCardText>
+            </PokedexCardPkmContainer>
+            <div>
+            <PokedexCardButtons
+              onClick={() => goToDetails(navigate, poke.name)}
+              key={poke.name}
+            >
+              Ver Detalhes
+            </PokedexCardButtons>
+            <PokedexCardButtons
               onClick={() => {
                 rmvPokemonCart(poke);
               }}
             >
               Remover
-            </button>
-            <button
-              onClick={() => goToDetails(navigate, poke.name)}
-              key={poke.name}
-            >
-              Ver Detalhes
-            </button>
-          </div>
+            </PokedexCardButtons>
+            </div>
+          </PokedexCardContainer>
         );
       })}
 
       <button onClick={() => goToBack(navigate)}>VOLTAR</button>
-    </div>
+    </PokedexContainer>
   );
 };
 
