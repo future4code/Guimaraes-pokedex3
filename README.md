@@ -13,7 +13,7 @@ O projeto Pokedex é baseado na utilização da API pública "Poke Api" para cri
 - Camila Coradi
 - Laíne Moura
 
-[Pokedex](https://grouchy-garden.surge.sh/)
+[Pokedex](certain-grandfather.surge.sh)
 
 ### O que funciona:
 - Listagem de Pokemons disponíveis na HomePage.
