@@ -4,20 +4,30 @@
   
 
 
+# Descrição
 
+O projeto Pokedex é baseado na utilização da API pública "Poke Api" para criar uma pokedex online, aonde o usuário do aplicativo, poderá através de uma lista personalizada adicionar, remover e visualizar os destalhes de determinados pokemons escolhidos para sua pokedex.
 
   Nome dos integrantes: 
 - Caio Rigotto
 - Camila Coradi
 - Laíne Moura
 
-[Link do Surge](https://grouchy-garden.surge.sh/)
+[Pokedex](https://grouchy-garden.surge.sh/)
 
-O que funciona:
-- Item 1
-- Item 2
+### O que funciona:
+- Listagem de Pokemons disponíveis na HomePage.
+- Pokemons por seu tipo.
+- Adicionar Pokemons para a pokedex.
+- Remover Pokemons adicionados na página da pokedex.
+- Detalhes de determinado pokemon.
 
-O que não funciona: 
-- Item 3
-- Item 4
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+- [React](https://pt-br.reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [PokeAPI](https://pokeapi.co/)
+
 
