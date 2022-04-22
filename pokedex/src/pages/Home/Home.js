@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { goToPokedex } from "../../Routes/coordinator/coordinator";
+import Detalhes from"../../img/Detalhes.png"
+import Add from'../../img/Adicionar-a-Pokedex.png'
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import { goToDetails } from "../../Routes/coordinator/coordinator";
 import { Pagination } from "@mui/material";
@@ -25,13 +26,13 @@ const Home = () => {
             <PkmButtonsContainer>
             <PkmButtons onClick={() => addToPokedex(poke)}>
               {" "}
-              Adicionar à Pokedex{" "}
+              <img src={Add}/>
             </PkmButtons>
             <PkmButtons
               onClick={() => goToDetails(navigate, poke.name)}
               key={poke.name}
             >
-              Detalhes
+              <img src={Detalhes}/>
             </PkmButtons>
             </PkmButtonsContainer>
           </PkmCard>
